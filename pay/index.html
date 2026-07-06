@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAGAMENTO | JAROD</title>
+  <title>PAY</title>
   <style>
     :root {
       --bg: #020403;
@@ -225,6 +224,11 @@
     }
 
     document.addEventListener('DOMContentLoaded', generateDynamicPix);
-  </script>
+  
+    // Bloqueio de clique direito
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+</script>
 </body>
 </html>
