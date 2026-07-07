@@ -359,6 +359,38 @@ h1{
 }
 @keyframes boot{0%{width:7%}35%{width:46%}65%{width:82%}100%{width:100%}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
+
+#identidade .info-list{gap:14px}
+#identidade .info-item{
+  grid-template-columns:1fr;
+  justify-items:center;
+  text-align:center;
+  padding:16px 14px;
+  min-height:104px;
+}
+#identidade .info-item .icon{width:28px;height:28px;margin-bottom:2px}
+#identidade .mini-btn{width:178px;text-align:center;margin-top:2px}
+#identidade .info-value{line-height:1.45}
+.thais{display:inline-block;color:var(--green);font-weight:950;text-shadow:0 0 18px rgba(0,255,122,.32);letter-spacing:.04em}
+.zodiac-icon{
+  width:34px;height:34px;border-radius:14px;
+  display:grid;place-items:center;
+  font-family:var(--mono);
+  font-size:1.35rem;
+  font-weight:900;
+  color:#00130b;
+  background:var(--green);
+  box-shadow:0 0 18px rgba(0,255,122,.28);
+  flex:0 0 auto;
+}
+.zodiac-icon.aries{background:var(--cyan);box-shadow:0 0 18px rgba(0,229,255,.25)}
+.zodiac-icon.aquarius{background:#b7ffdf;box-shadow:0 0 18px rgba(183,255,223,.20)}
+.pie-symbols{position:absolute;inset:0;pointer-events:none;font-family:var(--mono);font-weight:950;color:#00130b}
+.pie-symbols span{position:absolute;width:34px;height:34px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.86);box-shadow:0 0 16px rgba(255,255,255,.18)}
+.pie-symbols .scorpio{top:28px;left:92px;color:#003018}
+.pie-symbols .aries{right:30px;bottom:64px;color:#003746}
+.pie-symbols .aquarius{left:30px;bottom:64px;color:#032018}
+
 @media(max-width:900px){.grid,.grid.three,.astro-layout{grid-template-columns:1fr}.top-panel{grid-template-columns:1fr}.status-pill{width:max-content}.pie{width:190px;height:190px}.device-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.page{width:min(100% - 22px,1120px);padding-top:14px}.card{padding:18px;border-radius:20px}.top-panel{border-radius:20px}.info-item{grid-template-columns:auto 1fr}.mini-btn{grid-column:2}.hero{padding:30px 10px 26px}}
 </style>
@@ -382,7 +414,6 @@ h1{
   </section>
 
   <header class="hero">
-    <div class="hero-kicker"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.8 6.3 6.8.7-5.1 4.5 1.5 6.7L12 16.8 6 20.2l1.5-6.7L2.4 9l6.8-.7L12 2z"/></svg></span>HOMO SAPIENS</div>
     <h1>I Am Jarod</h1>
     <div class="hero-subtitle">Automation • Systems • XFCE • Matrix Interface</div>
     <div class="hero-actions">
@@ -446,11 +477,11 @@ h1{
       <article class="card" style="grid-column:span 2;">
         <div class="card-title"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg></span>RESUMO ASTRAL</div>
         <div class="astro-layout">
-          <div class="chart-wrap"><div class="pie"></div></div>
+          <div class="chart-wrap"><div class="pie"><div class="pie-symbols"><span class="scorpio">♏</span><span class="aries">♈</span><span class="aquarius">♒</span></div></div></div>
           <div class="legend">
-            <div class="legend-item"><div class="legend-left"><span class="dot"></span><div><div class="legend-name">Escorpião</div><div class="legend-role">Sol • Essência</div></div></div><div class="legend-percent">34%</div></div>
-            <div class="legend-item"><div class="legend-left"><span class="dot cyan"></span><div><div class="legend-name">Áries</div><div class="legend-role">Ascendente • Presença</div></div></div><div class="legend-percent">33%</div></div>
-            <div class="legend-item"><div class="legend-left"><span class="dot white"></span><div><div class="legend-name">Aquário</div><div class="legend-role">Lua • Instinto</div></div></div><div class="legend-percent">33%</div></div>
+            <div class="legend-item"><div class="legend-left"><span class="zodiac-icon scorpio">♏</span><div><div class="legend-name">Escorpião</div><div class="legend-role">Sol • Essência</div></div></div><div class="legend-percent">34%</div></div>
+            <div class="legend-item"><div class="legend-left"><span class="zodiac-icon aries">♈</span><div><div class="legend-name">Áries</div><div class="legend-role">Ascendente • Presença</div></div></div><div class="legend-percent">33%</div></div>
+            <div class="legend-item"><div class="legend-left"><span class="zodiac-icon aquarius">♒</span><div><div class="legend-name">Aquário</div><div class="legend-role">Lua • Instinto</div></div></div><div class="legend-percent">33%</div></div>
           </div>
         </div>
       </article>
@@ -463,7 +494,6 @@ h1{
     </section>
   </main>
 
-  <footer class="footer">Copyright © 2026 JAROD, L.L.C.</footer>
 </div>
 <script>
 const canvas=document.getElementById('matrixCanvas');
