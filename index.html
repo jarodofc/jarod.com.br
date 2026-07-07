@@ -651,6 +651,65 @@
       stroke-linejoin: round;
     }
 
+
+    .chip-icon, .pay-btn, .system-title, .section-title, .row-label, .skill-head span, .clock-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chip-icon svg, .pay-btn svg, .system-title svg, .section-title svg, .row-label svg, .skill-head svg, .clock-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      color: var(--matrix);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .row-label {
+      color: var(--muted);
+    }
+
+    .row-label svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .network-action svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      margin-right: 5px;
+      vertical-align: -2px;
+    }
+
+    .status-online::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--matrix);
+      box-shadow: 0 0 12px var(--matrix);
+      display: inline-block;
+      margin-right: 7px;
+    }
+
     @media (max-width: 560px) {
       .device-grid { grid-template-columns: 1fr; }
       .hero-chips { justify-content: center; }
@@ -673,17 +732,16 @@
   <div class="page">
     <header class="system-bar">
       <div>
-        <div class="system-title" id="bootTitle">SYSTEM INITIALIZATION</div>
+        <div class="system-title" id="bootTitle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M9 9h6v6H9z"></path><path d="M9 1v3"></path><path d="M15 1v3"></path><path d="M9 20v3"></path><path d="M15 20v3"></path></svg><span>SYSTEM INITIALIZATION</span></div>
         <div class="loader-track"><div class="loader-fill"></div></div>
         <div class="boot-lines" id="bootLine">Loading kernel...</div>
       </div>
-      <a class="pay-btn" href="https://jarod.com.br/pay" target="_blank" rel="noopener">PAGAMENTO</a>
+      <a class="pay-btn" href="https://jarod.com.br/pay" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path><path d="M7 15h3"></path></svg>PAGAMENTO</a>
     </header>
 
     <section class="hero">
       <div class="hero-chips">
-        <div class="chip">INTERFACE: HOMO SAPIENS</div>
-        <div class="chip">INTERFACE: XFCE</div>
+        <div class="chip chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="12" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg> INTERFACE: XFCE</div>
       </div>
       <h1>I AM JAROD</h1>
       <p>Automação, tecnologia, criatividade e sistemas. Um painel pessoal com identidade Matrix, visual Material Design e organização centralizada.</p>
@@ -691,7 +749,7 @@
 
     <section class="grid">
       <article class="card">
-        <h2>> Sobre</h2>
+        <h2 class="section-title"><svg viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h11l3 3v13.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5z"></path><path d="M14 3v5h5"></path><path d="M8 13h8"></path><path d="M8 17h6"></path></svg><span>Sobre</span></h2>
         <div class="about-text scripted-story">
           <span class="story-kicker">ARQUIVO DESCLASSIFICADO</span>
 
@@ -708,19 +766,19 @@
       </article>
 
       <article class="card">
-        <h2>> Identidade</h2>
+        <h2 class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.8-4 5-6 8-6s6.2 2 8 6"></path></svg><span>Identidade</span></h2>
         <div class="profile-list">
-          <div class="profile-item"><span>Instagram</span><strong class="action-wrap"><span class="network-value">@jarodofc</span><a class="network-action" href="https://www.instagram.com/jarodofc" target="_blank" rel="noopener">Abrir</a></strong></div>
-          <div class="profile-item"><span>WhatsApp</span><strong class="action-wrap"><span class="network-value">+55 31 9 9963-5303</span><a class="network-action" href="https://wa.me/5531999635303" target="_blank" rel="noopener">Conversar</a></strong></div>
-          <div class="profile-item"><span>LinkedIn</span><strong class="action-wrap"><span class="network-value">Jarod M M Jr</span><a class="network-action" href="https://www.linkedin.com/in/jarod-m-m-jr-5581b4287/?skipRedirect=true" target="_blank" rel="noopener">Visitar</a></strong></div>
-          <div class="profile-item"><span>Estado civil</span><strong class="network-value">CASADO (Thais S.)</strong></div>
-          <div class="profile-item"><span>Status</span><strong class="status-online">Online</strong></div>
+          <div class="profile-item"><span class="row-label"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3"></circle><path d="M17.5 6.5h.01"></path></svg>Instagram</span><strong class="action-wrap"><a class="network-action" href="https://www.instagram.com/jarodofc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>Abrir perfil</a></strong></div>
+          <div class="profile-item"><span class="row-label"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path><path d="M9 9c.5 2 2 3.5 4 4l1.2-1.2 2 1c-.3 1.1-1.2 2.2-2.4 2.2-3.4 0-6.8-3.4-6.8-6.8 0-1.2 1.1-2.1 2.2-2.4l1 2L9 9z"></path></svg>WhatsApp</span><strong class="action-wrap"><a class="network-action" href="https://wa.me/5531999635303" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>Conversar</a></strong></div>
+          <div class="profile-item"><span class="row-label"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 11v5"></path><path d="M8 8h.01"></path><path d="M12 16v-5"></path><path d="M12 13c0-1.1.9-2 2-2s2 .9 2 2v3"></path></svg>LinkedIn</span><strong class="action-wrap"><a class="network-action" href="https://www.linkedin.com/in/jarod-m-m-jr-5581b4287/?skipRedirect=true" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>Visitar perfil</a></strong></div>
+          <div class="profile-item"><span class="row-label"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9-9a5 5 0 0 1 8-5 5 5 0 0 1 8 5c-2 4.6-9 9-9 9z"></path></svg>Estado civil</span><strong class="network-value mention">CASADO — Thais S.</strong></div>
+          <div class="profile-item"><span class="row-label"><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"></path></svg>Status</span><strong class="status-online">Online</strong></div>
         </div>
       </article>
     </section>
 
     <section class="card">
-      <h2>> Resumo astral</h2>
+      <h2 class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M4.93 4.93l1.41 1.41"></path><path d="M17.66 17.66l1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="M4.93 19.07l1.41-1.41"></path><path d="M17.66 6.34l1.41-1.41"></path></svg><span>Resumo astral</span></h2>
       <div class="astro-layout">
         <div class="astro-visual">
           <div class="pie-wrap" aria-label="Gráfico astral: Escorpião 34%, Áries 33%, Aquário 33%">
@@ -741,24 +799,24 @@
 
     <section class="grid">
       <article class="card">
-        <h2>> Perfil operacional</h2>
+        <h2 class="section-title"><svg viewBox="0 0 24 24"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16V9"></path><path d="M12 16V6"></path><path d="M16 16v-4"></path></svg><span>Perfil operacional</span></h2>
         <div class="skills">
-          <div class="skill-row"><div class="skill-head"><span>Criatividade</span><strong>96%</strong></div><div class="skill-bar"><i style="--w:96%"></i></div></div>
-          <div class="skill-row"><div class="skill-head"><span>Automação</span><strong>92%</strong></div><div class="skill-bar"><i style="--w:92%"></i></div></div>
-          <div class="skill-row"><div class="skill-head"><span>Tecnologia</span><strong>94%</strong></div><div class="skill-bar"><i style="--w:94%"></i></div></div>
-          <div class="skill-row"><div class="skill-head"><span>Estratégia</span><strong>88%</strong></div><div class="skill-bar"><i style="--w:88%"></i></div></div>
+          <div class="skill-row"><div class="skill-head"><span><svg viewBox="0 0 24 24"><path d="M12 2l2.2 6.8H21l-5.5 4 2.1 6.8L12 15.4 6.4 19.6l2.1-6.8L3 8.8h6.8z"></path></svg>Criatividade</span><strong>96%</strong></div><div class="skill-bar"><i style="--w:96%"></i></div></div>
+          <div class="skill-row"><div class="skill-head"><span><svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path><path d="M4 12H2"></path><path d="M22 12h-2"></path><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M5 5l1.5 1.5"></path><path d="M17.5 17.5L19 19"></path></svg>Automação</span><strong>92%</strong></div><div class="skill-bar"><i style="--w:92%"></i></div></div>
+          <div class="skill-row"><div class="skill-head"><span><svg viewBox="0 0 24 24"><path d="M7 8l-4 4 4 4"></path><path d="M17 8l4 4-4 4"></path><path d="M14 4l-4 16"></path></svg>Tecnologia</span><strong>94%</strong></div><div class="skill-bar"><i style="--w:94%"></i></div></div>
+          <div class="skill-row"><div class="skill-head"><span><svg viewBox="0 0 24 24"><path d="M4 19l6-6"></path><path d="M14 5l5 5"></path><path d="M14 5v5h5"></path><path d="M10 13l4-8"></path></svg>Estratégia</span><strong>88%</strong></div><div class="skill-bar"><i style="--w:88%"></i></div></div>
         </div>
       </article>
 
       <article class="card">
-        <h2>> Tempo de execução</h2>
+        <h2 class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Tempo de execução</span></h2>
         <div class="clock" id="lifeClock">Calculando...</div>
       </article>
     </section>
 
 
     <section class="card">
-      <h2>> Ambiente / Dispositivos</h2>
+      <h2 class="section-title"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg><span>Ambiente / Dispositivos</span></h2>
       <div class="device-grid">
         <div class="device-item icon-row">
           <div class="device-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg></div>
@@ -784,7 +842,7 @@
     </section>
 
     <footer class="footer">
-      <p>Copyright © 2026 JAROD, L.L.C.</p>
+      <p><span class="row-label"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15 9a4 4 0 1 0 0 6"></path></svg>Copyright © 2026 JAROD, L.L.C.</span></p>
     </footer>
   </div>
 
