@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Documentação | MeR Seminovos</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <div id="toastHost" class="toast-host"></div>
 
+  <section id="loginView" class="login-view">
+    <form id="loginForm" class="login-card">
+      <div class="brand-logo">M</div>
+      <p class="eyebrow">MeR Seminovos</p>
+      <h1>Documentação</h1>
+      <p class="muted">Sistema administrativo modular para veículos, vendas, documentos e débitos.</p>
+
+      <label>
+        Usuário
+        <input id="loginUser" autocomplete="username" required>
+      </label>
+
+      <label>
+        Senha
+        <input id="loginPassword" type="password" autocomplete="current-password" required>
+      </label>
+
+      <button class="btn primary wide" type="submit">Entrar</button>
+      <p id="loginError" class="error-text"></p>
+
+      <div class="login-help">
+        <span>Administrador: JAROD / 4922</span>
+        <span>Visualização: MER / 123456</span>
+      </div>
+    </form>
+  </section>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo small">M</div>
+        <div>
+          <strong>Documentação</strong>
+          <span>MeR Seminovos</span>
+        </div>
+      </div>
+
+      <nav id="mainNav" class="main-nav">
+        <button class="nav-item active" data-route="dashboard">Dashboard</button>
+        <button class="nav-item" data-route="vehicles">Veículos</button>
+        <button class="nav-item" data-route="sales">Vendas mensais</button>
+        <button class="nav-item" data-route="documents">Extrair documento</button>
+        <button class="nav-item" data-route="import">Importar XLS</button>
+        <button class="nav-item" data-route="backup">Backup</button>
+        <button class="nav-item admin-only" data-route="users">Usuários</button>
+        <button class="nav-item admin-only" data-route="settings">Configurações</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div>
+          <strong id="sessionName">Usuário</strong>
+          <span id="sessionRole">Perfil</span>
+        </div>
+        <button id="logoutBtn" class="btn ghost">Sair</button>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p id="pageEyebrow" class="eyebrow">Visão geral</p>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="topbar-actions">
+          <button id="quickAddVehicle" class="btn primary admin-only">Novo veículo</button>
+        </div>
+      </header>
+
+      <section id="pageContent" class="page-content"></section>
+    </main>
+  </div>
+</body>
+</html>
